@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import NavBar from '../NavBar/NavBar';
 
 class Characters extends Component {
     render(){
         return(
-            <div>Characters Component</div>
+            <div>
+                <NavBar/>
+                Characters Component
+            </div>
         )
     }
 }

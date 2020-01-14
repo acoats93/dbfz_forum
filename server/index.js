@@ -6,7 +6,8 @@ const session = require('express-session');
 //controllers
 const {getAllCharacters} = require('./controllers/characterController');
 const {login,logout, getUser, register} = require('./controllers/userController');
-const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController')
+const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController');
+const {addComment, editComment, deleteComment} = require('./controllers/commentController');
 
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
@@ -37,8 +38,12 @@ app.post('/auth/logout', logout);
 app.get('/auth/user', getUser);
 //admin endpoints
 app.post('/admin/add', addCharacter);
-app.put('/admin/edit/:id', editCharacter);
-app.delete('/admin/delete/:id', deleteCharacter);
+app.put('/admin/edit/:char_id', editCharacter);
+app.delete('/admin/delete/:char_id', deleteCharacter);
+//comment endpoints
+app.post('/api/comments', addComment);
+app.put('/api/comments/:comment_id', editComment);
+app.delete('/api/comments/:comment_id', deleteComment);
 
 
 
