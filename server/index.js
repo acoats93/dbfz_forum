@@ -8,6 +8,7 @@ const {getAllCharacters} = require('./controllers/characterController');
 const {login,logout, getUser, register} = require('./controllers/userController');
 const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController');
 const {addComment, editComment, deleteComment} = require('./controllers/commentController');
+const {getAllTerms} = require('./controllers/generalController');
 
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
@@ -29,6 +30,8 @@ massive(CONNECTION_STRING).then((db) => {
     console.log('Database Connected :D')
 })
 
+//general endpoints
+app.get('/api/general', getAllTerms);
 //character endpoints
 app.get('/api/characters', getAllCharacters);
 //auth endpoints

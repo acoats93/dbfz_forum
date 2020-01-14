@@ -1,0 +1,21 @@
+$login_btn_colors: rgb(0, 174, 255);
+
+#whole_navbar {
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(28, 48, 235, 0.959);
+    color: rgb(187, 183, 183);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    border-bottom: 5px solid black;
+    h1 {
+        font-family: 'Saiyan Sans';
+    }
+    button {
+        background-color: $login_btn_colors;
+        display: flex;
+        float: right;
+    }
+}
+
