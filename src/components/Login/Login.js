@@ -1,15 +1,39 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {getUser, login} from '../../redux/reducers/userReducer'
 import NavBar from '../NavBar/NavBar';
 import './Login.css';
 
 class Login extends Component {
+    constructor(){
+        super()
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
 
-    handleInput = (e) => {
-        console.log(e.target.value);
+    componentDidMount(){
+        this.props.getUser();
+    }
+
+    handleUsernameInput = (e) => {
+        // console.log(e.target.value)
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    handlePasswordInput = (e) => {
+        // console.log(e.target.value)
+        this.setState({
+            password: e.target.value
+        })
     }
 
     handleClick = () => {
-
+        this.props.login(this.state.username, this.state.password)
     }
 
     render(){
@@ -19,15 +43,26 @@ class Login extends Component {
                 <section id='login_section'>
                     <h1>Login!</h1>
                     <br/>
-                    <input onChange={this.handleInput} placeholder='Username'></input>
+                    <input onChange={this.handleUsernameInput} placeholder='Username'></input>
                     <br/>
-                    <input onChange={this.handleInput} placeholder='Password'></input>
+                    <input onChange={this.handlePasswordInput} placeholder='Password'></input>
                     <br/>
-                    <button onClick={this.handleClick}>Login</button>
+                    <Link to='/user'>
+                        <button onClick={this.handleClick}>Login</button>
+                    </Link>
                 </section>
             </div>
         )
     }
 }
 
-export default Login;
+const mapStateToProps = (reduxState) => {
+    return {
+        user_id: reduxState.userReducer.user_id
+    }
+}
+
+export default connect(mapStateToProps, {
+    getUser,
+    login
+})(Login);

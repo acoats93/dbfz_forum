@@ -20,21 +20,21 @@ class Register extends Component {
     }
 
     handleUsernameInput = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         this.setState({
             username: e.target.value
         })
     }
 
     handlePasswordInput = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         this.setState({
             password: e.target.value
         })
     }
 
     handleBoxCheck = (e) => {
-        console.log(e.target.checked)
+        // console.log(e.target.checked)
         if(e.target.checked === true){
             this.setState({is_admin: true})
         }else if(e.target.checked === false){
