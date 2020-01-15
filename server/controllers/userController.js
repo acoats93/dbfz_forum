@@ -28,7 +28,7 @@ module.exports = {
         const {username, password} = req.body;
         const foundUser = await db.checkForUsername(username);
         
-        if(foundUser[0]){
+        if(!foundUser[0]){
             res.status(409).json({message: "Account Non-existent. Please make an account."})
         }else{
             const authUser = bcrypt.compareSync(password, foundUser[0].hash);
