@@ -13,13 +13,14 @@ class NavBar extends Component {
                     <Link to='/general'>General</Link>
                     <Link to='/characters'>Characters</Link>
                 </div>
-                    
-                <button>
-                    <Link to='/auth/login'>Login</Link>
-                </button>
-                <button>
-                    <Link to='/auth/register'>Register</Link>
-                </button>
+                <div>
+                    <button>
+                        <Link to='/auth/login'>Login</Link>
+                    </button>
+                    <button>
+                        <Link to='/auth/register'>Register</Link>
+                    </button>
+                </div>    
             </div>
         )
     }

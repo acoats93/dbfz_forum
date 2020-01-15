@@ -1,7 +1,7 @@
 module.exports = {
-    getAllTerms: (req, res) => {
+    getAllTerms: async (req, res) => {
         const db = req.app.get('db');
-        const allTerms = db.getAllTerms();
+        const allTerms = await db.getAllTerms();
         res.status(200).json(allTerms);
     }
 }

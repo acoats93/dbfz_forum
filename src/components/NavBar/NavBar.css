@@ -2,12 +2,13 @@
   width: 100vw;
   height: 100px;
   background-color: rgba(28, 48, 235, 0.959);
-  color: #bbb7b7;
+  color: #f14e02;
   border-bottom: 5px solid black;
 }
 
 #whole_navbar h1 {
   font-family: 'Saiyan Sans';
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #whole_navbar button {
