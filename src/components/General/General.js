@@ -1,20 +1,37 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import NavBar from '../NavBar/NavBar';
+import './General.css';
+import {connect} from 'react-redux';
 import {getTerms} from '../../redux/reducers/generalReducer';
 
 class General extends Component {
+    constructor(){
+        super()
+        this.state = {
+            menuStatus: 'drop-down-menu'
+        }
+    }
 
     componentDidMount(){
         this.props.getTerms();
     }
 
     render(){
+        console.log(this.props.terms);
         return(
-            <div>
+            <div id='whole_general_component'>
                 <NavBar/>
-                General Component
-
+                <div>
+                    <div>{this.props.terms.map(term => {
+                        return(
+                            <div key = {term.term_id} className='term_container'>
+                                <h1 className='term_name'>{term.term_name}</h1>
+                                <h2 className='term_info'>{term.term_info}</h2>
+                            </div>
+                        )
+                    })}</div>
+                    {/* <h3>{this.props.terms.term_description}</h3> */}
+                </div>
             </div>
         )
     }
