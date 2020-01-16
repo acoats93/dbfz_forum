@@ -9,6 +9,7 @@ class Characters extends Component {
                 <NavBar/>
                 Characters Component
                 <Link to='/add'>Add</Link>
+                <Link to='/edit'>Edit</Link>
             </div>
         )
     }

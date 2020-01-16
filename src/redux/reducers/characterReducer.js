@@ -65,5 +65,6 @@ export default function reducer(state=initialState, action){
                 ...state,
                 products: payload.data
             }
+        default: return state
     }
 }

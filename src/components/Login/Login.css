@@ -8,9 +8,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-image: url("https://i.pinimg.com/736x/c4/83/f4/c483f44f90c02f622bc740658172b2e5.jpg");
+}
+
+#login_section h1 {
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Saiyan Sans';
 }
 /*# sourceMappingURL=Login.css.map */
