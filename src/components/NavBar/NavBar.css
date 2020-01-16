@@ -1,21 +1,38 @@
 #whole_navbar {
   width: 100vw;
-  height: 100px;
-  background-color: rgba(28, 48, 235, 0.959);
-  color: #f14e02;
-  border-bottom: 5px solid black;
-}
-
-#whole_navbar h1 {
-  font-family: 'Saiyan Sans';
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-#whole_navbar button {
-  background-color: #00aeff;
+  height: 125px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  float: right;
+  background-color: black;
+  color: #f14e02;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border-bottom: 5px solid black;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Saiyan Sans';
+}
+
+#whole_navbar h1 {
+  font-size: 40px;
+}
+
+#whole_navbar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+#login-reg-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=NavBar.css.map */

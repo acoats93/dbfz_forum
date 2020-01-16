@@ -1,5 +1,9 @@
 #whole_general_component {
   background-color: #f14e02;
+  height: 100vh;
+  width: 100vw;
+  font-weight: bold;
+  border: 10px;
 }
 
 .term_name {

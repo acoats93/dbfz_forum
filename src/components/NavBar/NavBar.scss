@@ -1,22 +1,38 @@
 $login_btn_colors: rgb(0, 174, 255);
 
+@mixin text_style(){
+    font-family: 'Saiyan Sans';
+    // -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+    // -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+    // box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+}
+
 #whole_navbar {
     width: 100vw;
-    height: 100px;
-    background-color: rgba(28, 48, 235, 0.959);
+    height: 125px;
+    display: flex;
+    // background-color: rgba(28, 48, 235, 0.959);
+    background-color: black;
     color: rgb(241, 78, 2);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border-bottom: 5px solid black;
+    justify-content: space-around;
+    align-items: center;
+    @include text_style();
+
     h1 {
-        font-family: 'Saiyan Sans';
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-size: 40px;
     }
-    button {
-        background-color: $login_btn_colors;
-        display: flex;
-        float: right;
+
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
     }
+}
+
+#login-reg-container{
+    display: flex;
+    flex-direction: column;
 }
 

@@ -37,9 +37,9 @@ module.exports = {
                 res.status(403).json({message: "Username or Password Incorrect. Please Try Again"})
             }else{
                 req.session.user = {
-                    user_id: newUser[0].user_id,
-                    username: newUser[0].username,
-                    is_admin: newUser[0].is_admin
+                    user_id: foundUser[0].user_id,
+                    username: foundUser[0].username,
+                    is_admin: foundUser[0].is_admin
                 }
                 res.status(200).json(req.session.user);
             }
