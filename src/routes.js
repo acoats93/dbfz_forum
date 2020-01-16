@@ -6,6 +6,7 @@ import Characters from './components/Characters/Characters';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Users from './components/User/User';
+import Add from './components/Add/Add'
 
 
 export default (
@@ -16,6 +17,7 @@ export default (
         <Route component={Login} exact path='/auth/login'/>
         <Route component={Register} exact path='/auth/register'/>
         <Route component={Users} exact path='/user'/>
+        <Route component={Add} exact path='/add'/>
         <Route render={() => <h1>404 NOT FOUND.</h1>}/>
     </Switch>
 )
