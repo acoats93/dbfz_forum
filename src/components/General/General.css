@@ -6,6 +6,10 @@
   border: 10px;
 }
 
+.term_container {
+  background-color: #f14e02;
+}
+
 .term_name {
   text-decoration: underline;
 }

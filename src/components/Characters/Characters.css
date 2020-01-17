@@ -1,0 +1,35 @@
+#whole_page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f14e02;
+}
+
+#name_image_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+#char_name {
+  font-size: 50px;
+  font-family: 'Saiyan Sans';
+}
+
+#char_image {
+  height: 140px;
+  width: 140px;
+}
+
+.paragraph_titles {
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: 'Saiyan Sans';
+}
+/*# sourceMappingURL=Characters.css.map */

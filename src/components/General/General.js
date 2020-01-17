@@ -30,7 +30,6 @@ class General extends Component {
                             </div>
                         )
                     })}</div>
-                    {/* <h3>{this.props.terms.term_description}</h3> */}
                 </div>
             </div>
         )

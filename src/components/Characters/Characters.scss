@@ -1,0 +1,34 @@
+#whole_page {
+    width: 100vw;
+    height: 100vh;
+    // background-image: url(https://fsa.zobj.net/crop.php?r=pH_8qT5pRTLDyDptULs8dmPSWWxuA7diPXrUpBkNmEDo-slk435qrZXiKZH8GuILBeEIrjLHrN2IsNYQ_FhC3LM4KXFYH3WlDebO1DZVMn2DqXRvKcAaNfBpRRDMyw8eod8xxqcxqsvFf_rclxWgyLsb5kXrGuXI4gSfPmmqSsG1AnP_GuNHUFcKjBY);
+    background-color: rgb(241, 78, 2);
+}
+
+#name_image_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#char_name{
+    font-size: 50px;
+    font-family: 'Saiyan Sans';
+}
+
+#char_image{
+    height: 140px;
+    width: 140px;
+}
+
+#paragraph_container{
+
+}
+
+.paragraph_titles{
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Saiyan Sans';
+}

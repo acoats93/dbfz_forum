@@ -48,22 +48,22 @@ export default function reducer(state=initialState, action){
         case `${GET_ALL_CHARACTERS}_FULFILLED`:
             return {
                 ...state,
-                products: payload.data
+                characters: payload.data
             }
         case `${ADD_CHARACTER}_FULFILLED`:
             return {
                 ...state,
-                products: payload.data
+                characters: payload.data
             }
         case `${EDIT_CHARACTER}_FULFILLED`:
             return {
                 ...state,
-                products: payload.data
+                characters: payload.data
             }
         case `${DELETE_CHARACTER}_FULFILLED`:
             return {
                 ...state,
-                products: payload.data
+                characters: payload.data
             }
         default: return state
     }
