@@ -1,0 +1,59 @@
+#whole_homepage{
+    height: 100vh;
+    width: 100vw;
+    // background-color: rgb(23, 114, 233);
+    background-image: url(https://wallpaperaccess.com/full/884784.jpg);
+}
+
+#sections_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+#welcome_message{
+    font-family: 'Saiyan Sans';
+    font-size: 40px;
+    height: 200px;
+    width: 400px;
+    background-color: darkorange;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    -webkit-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#links_section{
+    display: flex;
+    justify-content: space-around;
+}
+
+%link_stuff{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkorange;
+    border-radius: 50%;
+    font-family: 'Saiyan Sans';
+    font-size: 25px;
+    border: 2px solid black;
+    -webkit-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#general_link{
+    @extend %link_stuff;
+}
+
+#characters_link{
+    @extend %link_stuff;    
+}

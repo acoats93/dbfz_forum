@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import {editCharacter, getAllCharacters} from '../../redux/reducers/characterReducer';
+import './Edit.css';
+
 
 class Edit extends Component {
     constructor(){
@@ -59,20 +61,23 @@ class Edit extends Component {
     }
 
     render(){
+        console.log(this.props.characters[0]);
         return(
             <div>
             <NavBar/>
-            <section>
-                    <input placeholder='Character Name' onChange={this.nameInput}></input>
-                    <input placeholder='Character Description' onChange={this.descriptionInput}></input>
-                    <input placeholder='Special Moves' onChange={this.spMoveInput}></input>
-                    <input placeholder='Basic Combos' onChange={this.comboInput}></input>
-                    <input placeholder='Advanced Combos' onChange={this.advComboInput}></input>
-                    <input placeholder='Character Image' onChange={this.imageInput}></input>
-                    <Link to='/characters'>
-                        <button onClick={this.handleClick}>Submit New Character</button>
-                    </Link>
-                </section>
+            <section id='whole_edit_section'>
+                <h1>Editing {this.props.match.params.char_id}</h1>
+                <input placeholder='Character Name' onChange={this.nameInput}></input>
+                <input placeholder='Character Description' onChange={this.descriptionInput}></input>
+                <input placeholder='Special Moves' onChange={this.spMoveInput}></input>
+                <input placeholder='Basic Combos' onChange={this.comboInput}></input>
+                <input placeholder='Advanced Combos' onChange={this.advComboInput}></input>
+                <input placeholder='Character Image' onChange={this.imageInput}></input>
+
+                <Link to='/characters'>
+                    <button onClick={this.handleClick}>Submit Character Changes</button>
+                </Link>
+            </section>
         </div>
         )
     }
@@ -80,7 +85,7 @@ class Edit extends Component {
 
 const mapStateToProps = (reduxState) => {
     return{
-        characters: reduxState.characterReducer.characters
+        characters: reduxState.characterReducer.characters,
     }
 }
 

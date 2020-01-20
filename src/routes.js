@@ -20,7 +20,7 @@ export default (
         <Route component={Register} exact path='/auth/register'/>
         <Route component={Users} exact path='/user'/>
         <Route component={Add} exact path='/add'/>
-        <Route component={Edit} exact path='/edit'/>
+        <Route component={Edit} exact path='/edit/:char_id'/>
         <Route render={() => <h1>404 NOT FOUND.</h1>}/>
     </Switch>
 )

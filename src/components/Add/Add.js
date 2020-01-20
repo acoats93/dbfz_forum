@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import {addCharacter, getAllCharacters} from '../../redux/reducers/characterReducer';
+import './Add.css'
 
 
 class Add extends Component {
@@ -62,7 +63,7 @@ class Add extends Component {
         return(
             <div>
                 <NavBar/>
-                <section>
+                <section id='whole_add_section'>
                     <input placeholder='Character Name' onChange={this.nameInput}></input>
                     <input placeholder='Character Description' onChange={this.descriptionInput}></input>
                     <input placeholder='Special Moves' onChange={this.spMoveInput}></input>

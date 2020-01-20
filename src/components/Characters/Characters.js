@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './Characters.css';
 import NavBar from '../NavBar/NavBar';
-import {getAllCharacters} from '../../redux/reducers/characterReducer';
+import {getAllCharacters, deleteCharacter} from '../../redux/reducers/characterReducer';
+import {getUser} from '../../redux/reducers/userReducer';
 
 class Characters extends Component {
 
     componentDidMount(){
         this.props.getAllCharacters();
+        this.props.getUser();
     }
 
     render(){
@@ -17,8 +19,7 @@ class Characters extends Component {
             <div id='whole_page'>
                 <NavBar/>
                 Characters Component
-                {/* <Link to='/add'>Add</Link>
-                <Link to='/edit'>Edit</Link> */}
+                <Link to='/add'>Add New Character!</Link>
                 <section>
                     {this.props.characters.map(character => {
                         return(
@@ -40,6 +41,15 @@ class Characters extends Component {
                                     <br/>
                                     <h1 className='paragraph_titles'>Advanced Combos</h1>
                                     <div id='char_advanced_combos'>{character.char_advanced_combos}</div>
+                                    {this.props.is_admin === true ? 
+                                    <div>
+                                        <button>
+                                            <Link to={`/edit/${character.char_id}`}>Edit</Link>
+                                        </button>
+                                        <button onClick={() => this.props.deleteCharacter(character.char_id)}>Delete</button>
+                                    </div>
+                                    :null
+                                    }
                                 </section>
                             </div>
                         )
@@ -53,10 +63,15 @@ class Characters extends Component {
 
 const mapStateToProps = (reduxState) => {
     return {
-        characters: reduxState.characterReducer.characters
+        characters: reduxState.characterReducer.characters,
+        user_id: reduxState.userReducer.user_id,
+        is_admin: reduxState.userReducer.is_admin
     }
 }
 
 export default connect(mapStateToProps, {
-    getAllCharacters
+    getAllCharacters,
+    getUser,
+    deleteCharacter,
+    getUser
 })(Characters);

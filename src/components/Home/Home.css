@@ -1,0 +1,72 @@
+#whole_homepage {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://wallpaperaccess.com/full/884784.jpg);
+}
+
+#sections_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 100px;
+}
+
+#welcome_message {
+  font-family: 'Saiyan Sans';
+  font-size: 40px;
+  height: 200px;
+  width: 400px;
+  background-color: darkorange;
+  border-radius: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+  -webkit-box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#links_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#general_link, #characters_link {
+  width: 150px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: darkorange;
+  border-radius: 50%;
+  font-family: 'Saiyan Sans';
+  font-size: 25px;
+  border: 2px solid black;
+  -webkit-box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+/*# sourceMappingURL=Home.css.map */

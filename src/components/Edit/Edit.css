@@ -1,4 +1,4 @@
-#whole_add_section {
+#whole_edit_section {
   border: 1px solid black;
   height: 90vh;
   width: 100vw;
@@ -11,4 +11,4 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-/*# sourceMappingURL=Add.css.map */
+/*# sourceMappingURL=Edit.css.map */

@@ -3,11 +3,13 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './NavBar.css';
 import {getUser, logout} from '../../redux/reducers/userReducer';
+import {getAllCharacters} from '../../redux/reducers/characterReducer';
 
 class NavBar extends Component {
 
     componentDidMount(){
         this.props.getUser();
+        this.props.getAllCharacters();
     }
 
     render(){
@@ -45,9 +47,9 @@ class NavBar extends Component {
                             </button>
                             <h1>{this.props.username}</h1>
                             <section>
-                                <img id='point_char'></img>
-                                <img id='mid_char'></img>
-                                <img id='anchor_char'></img>
+                                <img id='point_char'>{}</img>
+                                <img id='mid_char'>{}</img>
+                                <img id='anchor_char'>{}</img>
                             </section>
                         </div>
                     )
@@ -67,5 +69,6 @@ const mapStateToProps = (reduxState) => {
 
 export default connect(mapStateToProps, {
     getUser,
+    getAllCharacters,
     logout
 })(NavBar);
