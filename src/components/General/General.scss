@@ -14,4 +14,26 @@
 
 .term_name {
     text-decoration: underline;
+    font-size: xx-large;
 }
+
+#menu_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu_button {
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+    border-radius: 25%;
+}
+
+#menu, #menu_open, #menu_closed {
+    width: 50vw;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+

@@ -8,19 +8,41 @@ class General extends Component {
     constructor(){
         super()
         this.state = {
-            menuStatus: 'drop-down-menu'
+            menuStatus: 'menu'
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         this.props.getTerms();
     }
 
+    menuClick = () => {
+        if(this.state.menuStatus === 'menu_closed'){
+            this.setState({menuStatus: 'menu_open'})
+        }else{
+            this.setState({menuStatus: 'menu_closed'})
+        }
+    }
+
     render(){
-        console.log(this.props.terms);
+        // console.log(this.props.terms);
         return(
             <div id='whole_general_component'>
                 <NavBar/>
+                <div id='menu_div'>
+                    <img 
+                    onClick={console.log('clicked')}
+                    src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
+                    id='menu_button'
+                    alt='menu_icon'/>
+                    <div id={this.state.menuStatus}>{this.props.terms.map(term => {
+                        return(
+                            <div key={term.term_id}>
+                                <p>{term.term_name}</p>
+                            </div>
+                        )
+                    })}</div>
+                </div>
                 <div>
                     <div>{this.props.terms.map(term => {
                         return(

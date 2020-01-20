@@ -25,7 +25,7 @@ class Characters extends Component {
                         return(
                             <div key={character.char_id}>
                                 <section id='name_image_container'>
-                                    <img id='char_image' src={character.char_image}/>
+                                    <img alt='char_image' id='char_image' src={character.char_image}/>
                                     <div id='char_name'>{character.char_name}</div>
                                 </section>
                                 <br/>
