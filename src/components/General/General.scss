@@ -6,6 +6,7 @@
     width: 100vw;
     font-weight: bold;
     border: 10px;
+    scroll-behavior: smooth;
 }
 
 .term_container {
@@ -29,11 +30,50 @@
     width: 25px;
     border: 2px solid black;
     border-radius: 25%;
+    left: 25px;
+    position: absolute;
+    margin-top: 20px;
 }
 
 #menu, #menu_open, #menu_closed {
     width: 50vw;
     border: 1px solid black;
-    border-radius: 25%;
+    // border-radius: 10%;
+    left: 500px;
+    // z-index: -1;
+    background-color: black;
+    color: darkorange;
+    font-family: 'Saiyan Sans';
 }
 
+#menu{
+    display: none;
+}
+
+#menu_open{
+    animation: openMenu 2s forwards linear;
+    z-index: 2;
+}
+
+#menu_closed{
+    animation: closeMenu .5s forwards linear;
+    z-index: -1;
+}
+
+@keyframes openMenu {
+    from {
+        top: -1000px;
+    }
+    to {
+        top: 80px
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        top: 80px;
+    }
+    100% {
+        top: -1000px
+    }
+}

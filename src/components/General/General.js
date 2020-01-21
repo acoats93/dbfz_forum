@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../NavBar/NavBar';
 import './General.css';
 import {connect} from 'react-redux';
+import {Link, Element} from 'react-scroll';
 import {getTerms} from '../../redux/reducers/generalReducer';
 
 class General extends Component {
@@ -17,10 +18,10 @@ class General extends Component {
     }
 
     menuClick = () => {
-        if(this.state.menuStatus === 'menu_closed'){
-            this.setState({menuStatus: 'menu_open'})
-        }else{
+        if(this.state.menuStatus === 'menu_open'){
             this.setState({menuStatus: 'menu_closed'})
+        }else{
+            this.setState({menuStatus: 'menu_open'})
         }
     }
 
@@ -31,14 +32,24 @@ class General extends Component {
                 <NavBar/>
                 <div id='menu_div'>
                     <img 
-                    onClick={console.log('clicked')}
+                    onClick={this.menuClick}
                     src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
                     id='menu_button'
                     alt='menu_icon'/>
                     <div id={this.state.menuStatus}>{this.props.terms.map(term => {
                         return(
                             <div key={term.term_id}>
-                                <p>{term.term_name}</p>
+                                {/* <Link to={`#${term.term_name}`}>{term.term_name}</Link> */}
+                                <Element
+                                    activeClass="active"
+                                    to={term.term_name}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration= {500}
+                                    >{term.term_name}
+                                </Element>
+                                <br/>
                             </div>
                         )
                     })}</div>
