@@ -48,7 +48,9 @@ class NavBar extends Component {
                             <button onClick={this.props.logout}>
                                 <Link to='/'>Logout</Link>
                             </button>
-                            <h1>{this.props.username}</h1>
+                            <Link to='/user'>
+                                <h1>{this.props.username}</h1>
+                            </Link>
                             <section>
                                 <img alt='point_char_image' id='point_char'>{}</img>
                                 <img alt='mid_char_image' id='mid_char'>{}</img>

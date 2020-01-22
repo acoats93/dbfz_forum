@@ -21,16 +21,25 @@ class Users extends Component {
         this.props.getAllCharacters();
     }
 
-    handlePointChange = (e) => {
-        this.setState({point_char_id: e.target.value})
+    handlePointChange = () => {
+        // this.setState({point_char_id: e.target.value})
+        let e = document.getElementById("point_select");
+        let pointVal = e.options[e.selectedIndex].value;
+        this.setState({point_char_id: pointVal})
     }
 
-    handleMidChange = (e) => {
-        this.setState({mid_char_id: e.target.value})
+    handleMidChange = () => {
+        // this.setState({mid_char_id: e.target.value})
+        let e = document.getElementById("mid_select").value;
+        // let midVal = e.options[e.selectedIndex].value;
+        this.setState({mid_char_id: e})
     }
 
     handleAnchorChange = (e) => {
         this.setState({anchor_char_id: e.target.value})
+        // let e = document.getElementById("anchor_select");
+        // let anchorVal = e.options[e.selectedIndex].value;
+        // this.setState({anchor_char_id: anchorVal})
     }
 
     handleClick = () => {
@@ -54,31 +63,31 @@ class Users extends Component {
                 <h1 id='greeting_message'>Hello {this.props.username}</h1>
                 <section className='team_building_section'>
                     <section className='category_titles'>Point Character
-                        <select>
+                        <select value={this.state.point_char_id} onChange={this.handlePointChange}  id='point_select'>
                             <option value='-blank-'>-Choose a Character</option>
                             {this.props.characters.map(character => {
                                 return(
-                                    <option onChange={this.handlePointChange} value={character.char_id}>{character.char_name}</option>
+                                    <option value={character.char_id}>{character.char_name}</option>
                                 )
                             })}
                         </select>
                     </section>
                     <section className='category_titles'>Mid Character
-                        <select>
+                        <select value={this.state.mid_char_id} onChange={this.handleMidChange} id='mid_select'>
                             <option value='-blank-'>-Choose a Character</option>
                             {this.props.characters.map(character => {
                                 return(
-                                    <option onChange={this.handleMidChange} value={character.char_id}>{character.char_name}</option>
+                                    <option value={character.char_id}>{character.char_name}</option>
                                 )
                             })}
                         </select>
                     </section>
                     <section className='category_titles'>Anchor Character
-                        <select>
+                        <select value={this.state.anchor_char_id} onChange={this.handleAnchorChange} id='anchor_select'> 
                             <option value='-blank-'>-Choose a Character</option>
                             {this.props.characters.map(character => {
                                 return(
-                                    <option onChange={this.handleClick} value={character.char_id}>{character.char_name}</option>
+                                    <option value={character.char_id}>{character.char_name}</option>
                                 )
                             })}
                         </select>
