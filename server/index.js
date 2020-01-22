@@ -5,7 +5,7 @@ const massive = require('massive');
 const session = require('express-session');
 //controllers
 const {getAllCharacters} = require('./controllers/characterController');
-const {login,logout, getUser, register} = require('./controllers/userController');
+const {login, logout, getUser, register, addUserCharacters} = require('./controllers/userController');
 const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController');
 const {addComment, editComment, deleteComment} = require('./controllers/commentController');
 const {getAllTerms} = require('./controllers/generalController');
@@ -47,6 +47,8 @@ app.delete('/admin/delete/:char_id', deleteCharacter);
 app.post('/api/comments', addComment);
 app.put('/api/comments/:comment_id', editComment);
 app.delete('/api/comments/:comment_id', deleteComment);
+//team endpoints
+app.put('/api/team/:user_id', addUserCharacters);
 
 
 

@@ -4,7 +4,10 @@ import axios from 'axios';
 const initialState = {
     user_id: null,
     username: '',
-    is_admin: false
+    is_admin: false,
+    point_char_id: null,
+    mid_char_id: null,
+    anchor_char_id: null
 }
 
 
@@ -13,6 +16,7 @@ const GET_USER = 'GET_USER';
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const REGISTER = 'REGISTER';
+const ADD_USER_CHARACTERS = 'ADD_USER_CHARACTERS';
 
 //functions
 
@@ -53,6 +57,13 @@ export const register = (username, password, is_admin) => {
     }
 }
 
+export const addUserCharacters = (userCharacters, user_id) => {
+    return {
+        type: ADD_USER_CHARACTERS,
+        payload: axios.put(`/api/team/${user_id}`, userCharacters)
+    }
+}
+
 //reducers
 
 export default function reducer(state = initialState, action){
@@ -86,6 +97,13 @@ export default function reducer(state = initialState, action){
                 username: '',
                 is_admin: false                
             }    
+        case `${ADD_USER_CHARACTERS}_FULFILLED`:
+            return{
+                ...state,
+                point_char_id: payload.data.point_char_id,
+                mid_char_id: payload.data.mid_char_id,
+                anchor_char_id: payload.data.anchor_char_id
+            }
         default: return state
     }
 }

@@ -1,3 +1,10 @@
+$font: 'Saiyan Sans';
+
+
 #greeting_message{
-    font-family: 'Saiyan Sans';
+    font-family: $font;
 }   
+
+.category_titles{
+    font-family: $font;
+}

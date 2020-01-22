@@ -14,7 +14,6 @@ class Characters extends Component {
     }
 
     render(){
-        console.log(this.props.characters)
         return(
             <div id='whole_page'>
                 <NavBar/>

@@ -53,5 +53,13 @@ module.exports = {
 
     getUser: (req,res) => {
         res.status(200).json(req.session.user);
+    },
+
+    addUserCharacters: async (req, res) => {
+        const db = req.app.get('db');
+        const {point_char_id, mid_char_id, anchor_char_id} = req.body;
+        const {user_id} = req.params;
+        const userCharacters = await db.addUserCharacters(point_char_id,mid_char_id,anchor_char_id, user_id);
+        res.status(200).json(userCharacters);
     }
 }
