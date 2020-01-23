@@ -66,24 +66,25 @@ module.exports = {
         res.status(200).json(userCharacters);
     },
 
-    getPointImages: async (req, res) => {
+    getTeamImages: async (req, res) => {
         const db = req.app.get('db');
-        const {user_id} = req.body;
-        const pointCharacter = await db.getPointCharImage(user_id);
-        res.status(200).json(pointCharacter[0].char_image);
-    },
-
-    getMidImages: async (req, res) => {
-        const db = req.app.get('db');
-        const {user_id} = req.body;
-        const midCharacter = await db.getMidCharImage(user_id);
-        res.status(200).json(midCharacter[0].char_image);
-    },
-
-    getAnchorImages: async (req, res) => {
-        const db = req.app.get('db');
-        const {user_id} = req.body;
-        const anchorCharacter = await db.getAnchorCharImage(user_id);
-        res.status(200).json(anchorCharacter[0].char_image);
+        const {user_id} = req.session.user;
+        const images = await db.getTeamImages(user_id);
+        console.log(images);
+        res.status(200).json(images);
     }
+
+    // getMidImages: async (req, res) => {
+    //     const db = req.app.get('db');
+    //     const {user_id} = req.body;
+    //     const midCharacter = await db.getMidCharImage(user_id);
+    //     res.status(200).json(midCharacter[0].char_image);
+    // },
+
+    // getAnchorImages: async (req, res) => {
+    //     const db = req.app.get('db');
+    //     const {user_id} = req.body;
+    //     const anchorCharacter = await db.getAnchorCharImage(user_id);
+    //     res.status(200).json(anchorCharacter[0].char_image);
+    // }
 }

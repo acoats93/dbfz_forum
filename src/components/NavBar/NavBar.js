@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './NavBar.css';
-import {getUser, logout, getPointCharImage, getMidCharImage, getAnchorCharImage} from '../../redux/reducers/userReducer';
+import {getUser, logout, getTeamImages} from '../../redux/reducers/userReducer';
 import {getAllCharacters} from '../../redux/reducers/characterReducer';
 
 class NavBar extends Component {
@@ -10,6 +10,9 @@ class NavBar extends Component {
     componentDidMount(){
         this.props.getUser();
         this.props.getAllCharacters();
+        this.props.getTeamImages(this.props.user_id);
+        // this.props.getMidCharImage(this.props.user_id);
+        // this.props.getPointCharImage(this.props.user_id)
     }
 
     render(){
@@ -52,9 +55,9 @@ class NavBar extends Component {
                                 <h1>{this.props.username}</h1>
                             </Link>
                             <section>
-                                <img src={getPointCharImage(this.props.user_id)} alt='point_char_image' id='point_char'></img>
-                                <img src={getMidCharImage(this.props.user_id)} alt='mid_char_image' id='mid_char'></img>
-                                <img src={getAnchorCharImage(this.props.user_id)} alt='anchor_char_image' id='anchor_char'></img>
+                                <img src={this.props.point_char_image} alt='point_char_image' id='point_char' className='nav_char_images'></img>
+                                <img src={this.props.mid_char_image} alt='mid_char_image' id='mid_char' className='nav_char_images'></img>
+                                <img src={this.props.anchor_char_image} alt='anchor_char_image' id='anchor_char' className='nav_char_images'></img>
                             </section>
                         </div>
                     )
@@ -68,7 +71,10 @@ class NavBar extends Component {
 const mapStateToProps = (reduxState) => {
     return{
         user_id: reduxState.userReducer.user_id,
-        username: reduxState.userReducer.username
+        username: reduxState.userReducer.username,
+        point_char_image: reduxState.userReducer.point_char_image,
+        mid_char_image: reduxState.userReducer.mid_char_image,
+        anchor_char_image: reduxState.userReducer.anchor_char_image
     }
 }
 
@@ -76,7 +82,5 @@ export default connect(mapStateToProps, {
     getUser,
     getAllCharacters,
     logout,
-    getPointCharImage,
-    getMidCharImage,
-    getAnchorCharImage
+    getTeamImages
 })(NavBar);

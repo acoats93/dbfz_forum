@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../NavBar/NavBar';
 import './General.css';
 import {connect} from 'react-redux';
-import {Link, Element} from 'react-scroll';
+import {Link,  Element} from 'react-scroll';
 import {getTerms} from '../../redux/reducers/generalReducer';
 
 class General extends Component {

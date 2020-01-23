@@ -1,5 +1,11 @@
 $login_btn_colors: rgb(0, 174, 255);
 
+@mixin nav_image_size(){
+    height: 20px;
+    width: 20px;
+    border: 1px solid darkorange;
+}
+
 @mixin text_style(){
     font-family: 'Saiyan Sans';
     // -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
@@ -36,3 +42,6 @@ $login_btn_colors: rgb(0, 174, 255);
     flex-direction: column;
 }
 
+.nav_char_images {
+    @include nav_image_size()
+}

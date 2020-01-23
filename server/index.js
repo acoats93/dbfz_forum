@@ -5,7 +5,7 @@ const massive = require('massive');
 const session = require('express-session');
 //controllers
 const {getAllCharacters} = require('./controllers/characterController');
-const {login, logout, getUser, register, addUserCharacters, getPointImages, getMidImages, getAnchorImages} = require('./controllers/userController');
+const {login, logout, getUser, register, addUserCharacters, getTeamImages} = require('./controllers/userController');
 const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController');
 const {addComment, editComment, deleteComment} = require('./controllers/commentController');
 const {getAllTerms} = require('./controllers/generalController');
@@ -49,9 +49,9 @@ app.put('/api/comments/:comment_id', editComment);
 app.delete('/api/comments/:comment_id', deleteComment);
 //team endpoints
 app.put('/api/team/:user_id', addUserCharacters);
-app.get('/api/team/point', getPointImages);
-app.get('/api/team/mid', getMidImages);
-app.get('/api/team/anchor', getAnchorImages);
+app.get('/api/team', getTeamImages);
+// app.get('/api/team/mid', getMidImages);
+// app.get('/api/team/anchor', getAnchorImages);
 
 
 
