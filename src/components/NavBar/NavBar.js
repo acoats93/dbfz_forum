@@ -11,8 +11,6 @@ class NavBar extends Component {
         this.props.getUser();
         this.props.getAllCharacters();
         this.props.getTeamImages(this.props.user_id);
-        // this.props.getMidCharImage(this.props.user_id);
-        // this.props.getPointCharImage(this.props.user_id)
     }
 
     render(){

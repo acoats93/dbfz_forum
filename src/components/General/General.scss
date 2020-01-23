@@ -38,10 +38,10 @@
 #menu, #menu_open, #menu_closed {
     width: 50vw;
     border: 1px solid black;
-    // border-radius: 10%;
-    left: 500px;
+    border-radius: 5%;
+    left: 100px;
     position: absolute;
-    z-index: -1;
+    // z-index: -1;
     background-color: black;
     color: darkorange;
     font-family: 'Saiyan Sans';
@@ -52,7 +52,7 @@
 }
 
 #menu_open{
-    animation: openMenu 2s forwards linear;
+    animation: openMenu .5s forwards linear;
     // z-index: 2;
 }
 
