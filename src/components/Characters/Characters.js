@@ -72,5 +72,4 @@ export default connect(mapStateToProps, {
     getAllCharacters,
     getUser,
     deleteCharacter,
-    getUser
 })(Characters);

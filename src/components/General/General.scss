@@ -40,7 +40,8 @@
     border: 1px solid black;
     // border-radius: 10%;
     left: 500px;
-    // z-index: -1;
+    position: absolute;
+    z-index: -1;
     background-color: black;
     color: darkorange;
     font-family: 'Saiyan Sans';
@@ -52,12 +53,12 @@
 
 #menu_open{
     animation: openMenu 2s forwards linear;
-    z-index: 2;
+    // z-index: 2;
 }
 
 #menu_closed{
     animation: closeMenu .5s forwards linear;
-    z-index: -1;
+    // z-index: -1;
 }
 
 @keyframes openMenu {

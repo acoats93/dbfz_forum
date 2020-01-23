@@ -46,6 +46,8 @@
   width: 50vw;
   border: 1px solid black;
   left: 500px;
+  position: absolute;
+  z-index: -1;
   background-color: black;
   color: darkorange;
   font-family: 'Saiyan Sans';
@@ -58,13 +60,11 @@
 #menu_open {
   -webkit-animation: openMenu 2s forwards linear;
           animation: openMenu 2s forwards linear;
-  z-index: 2;
 }
 
 #menu_closed {
   -webkit-animation: closeMenu .5s forwards linear;
           animation: closeMenu .5s forwards linear;
-  z-index: -1;
 }
 
 @-webkit-keyframes openMenu {

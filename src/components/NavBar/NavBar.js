@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './NavBar.css';
-import {getUser, logout} from '../../redux/reducers/userReducer';
+import {getUser, logout, getPointCharImage, getMidCharImage, getAnchorCharImage} from '../../redux/reducers/userReducer';
 import {getAllCharacters} from '../../redux/reducers/characterReducer';
 
 class NavBar extends Component {
@@ -52,9 +52,9 @@ class NavBar extends Component {
                                 <h1>{this.props.username}</h1>
                             </Link>
                             <section>
-                                <img alt='point_char_image' id='point_char'>{}</img>
-                                <img alt='mid_char_image' id='mid_char'>{}</img>
-                                <img alt='anchor_char_image' id='anchor_char'>{}</img>
+                                <img src={getPointCharImage(this.props.user_id)} alt='point_char_image' id='point_char'></img>
+                                <img src={getMidCharImage(this.props.user_id)} alt='mid_char_image' id='mid_char'></img>
+                                <img src={getAnchorCharImage(this.props.user_id)} alt='anchor_char_image' id='anchor_char'></img>
                             </section>
                         </div>
                     )
@@ -75,5 +75,8 @@ const mapStateToProps = (reduxState) => {
 export default connect(mapStateToProps, {
     getUser,
     getAllCharacters,
-    logout
+    logout,
+    getPointCharImage,
+    getMidCharImage,
+    getAnchorCharImage
 })(NavBar);

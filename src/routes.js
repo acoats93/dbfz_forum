@@ -8,7 +8,7 @@ import Register from './components/Register/Register';
 import Users from './components/User/User';
 import Add from './components/Add/Add';
 import Edit from './components/Edit/Edit';
-import { editCharacter } from './redux/reducers/characterReducer';
+
 
 
 export default (

@@ -39,7 +39,10 @@ module.exports = {
                 req.session.user = {
                     user_id: foundUser[0].user_id,
                     username: foundUser[0].username,
-                    is_admin: foundUser[0].is_admin
+                    is_admin: foundUser[0].is_admin,
+                    point_char_id: foundUser[0].point_char_id,
+                    mid_char_id: foundUser[0].mid_char_id,
+                    anchor_char_id: foundUser[0].anchor_char_id
                 }
                 res.status(200).json(req.session.user);
             }
@@ -61,5 +64,26 @@ module.exports = {
         const {user_id} = req.params;
         const userCharacters = await db.addUserCharacters(point_char_id,mid_char_id,anchor_char_id, user_id);
         res.status(200).json(userCharacters);
+    },
+
+    getPointImages: async (req, res) => {
+        const db = req.app.get('db');
+        const {user_id} = req.body;
+        const pointCharacter = await db.getPointCharImage(user_id);
+        res.status(200).json(pointCharacter[0].char_image);
+    },
+
+    getMidImages: async (req, res) => {
+        const db = req.app.get('db');
+        const {user_id} = req.body;
+        const midCharacter = await db.getMidCharImage(user_id);
+        res.status(200).json(midCharacter[0].char_image);
+    },
+
+    getAnchorImages: async (req, res) => {
+        const db = req.app.get('db');
+        const {user_id} = req.body;
+        const anchorCharacter = await db.getAnchorCharImage(user_id);
+        res.status(200).json(anchorCharacter[0].char_image);
     }
 }
