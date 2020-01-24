@@ -5,4 +5,11 @@
     background-color: darkorange;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#input_section {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
 }

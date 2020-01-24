@@ -59,20 +59,44 @@ class Add extends Component {
         this.props.addCharacter(character);
     }
 
+    checkUploadResult = (error, resultEvent) => {
+        if (resultEvent.event === 'success') {
+            this.setState({ char_image: resultEvent.info.url })
+        }
+    }
+
     render(){
+        let widget
+        if(window.cloudinary){
+            widget = window.cloudinary.createUploadWidget(
+                {
+                    cloudName: 'dlnezgd0h',
+                    uploadPreset: 'dbfz-preset',
+                    sources: ['local', 'url'],
+                    default: false
+                },
+                (error, result) => {
+                    this.checkUploadResult(error, result)
+                    this.checkUploadResult(error, result)
+                }
+                )
+        }
         return(
             <div>
                 <NavBar/>
                 <section id='whole_add_section'>
-                    <input placeholder='Character Name' onChange={this.nameInput}></input>
-                    <input placeholder='Character Description' onChange={this.descriptionInput}></input>
-                    <input placeholder='Special Moves' onChange={this.spMoveInput}></input>
-                    <input placeholder='Basic Combos' onChange={this.comboInput}></input>
-                    <input placeholder='Advanced Combos' onChange={this.advComboInput}></input>
-                    <input placeholder='Character Image' onChange={this.imageInput}></input>
-                    <Link to='/characters'>
-                        <button onClick={this.handleClick}>Submit New Character</button>
-                    </Link>
+                    <div id='input_section'>
+                        {/* <input placeholder='Character Image' onChange={this.imageInput}></input> */}
+                        <button onClick={() => widget.open()}>Select an Image</button>
+                        <input placeholder='Character Name' onChange={this.nameInput}></input>
+                        <input placeholder='Character Description' onChange={this.descriptionInput}></input>
+                        <input placeholder='Special Moves' onChange={this.spMoveInput}></input>
+                        <input placeholder='Basic Combos' onChange={this.comboInput}></input>
+                        <input placeholder='Advanced Combos' onChange={this.advComboInput}></input>
+                        <Link to='/characters'>
+                            <button onClick={this.handleClick}>Submit New Character</button>
+                        </Link>
+                    </div>
                 </section>
             </div>
             

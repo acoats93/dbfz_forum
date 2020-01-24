@@ -61,7 +61,6 @@ class Edit extends Component {
     }
 
     render(){
-        console.log(this.props.characters[0]);
         return(
             <div>
             <NavBar/>

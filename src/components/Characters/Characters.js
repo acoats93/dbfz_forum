@@ -7,18 +7,48 @@ import {getAllCharacters, deleteCharacter} from '../../redux/reducers/characterR
 import {getUser} from '../../redux/reducers/userReducer';
 
 class Characters extends Component {
-
+    constructor(){
+        super()
+        this.state = {
+            menuStatus: 'menu'
+        }
+    }
     componentDidMount(){
         this.props.getAllCharacters();
         this.props.getUser();
+    }
+
+    menuClick = () => {
+        if(this.state.menuStatus === 'menu_open'){
+            this.setState({menuStatus: 'menu_closed'})
+        }else{
+            this.setState({menuStatus: 'menu_open'})
+        }
     }
 
     render(){
         return(
             <div id='whole_page'>
                 <NavBar/>
-                Characters Component
-                <Link to='/add'>Add New Character!</Link>
+                <div id='menu_div'>
+                    <img 
+                    onClick={this.menuClick}
+                    src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
+                    id='menu_button'
+                    alt='menu_icon'/>
+                    <div id={this.state.menuStatus}>{this.props.characters.map(character => {
+                        return(
+                            <div key={character.char_id}>
+                                {character.char_name}
+                            </div>
+                        )
+                    })}</div>
+                </div>
+                {this.props.is_admin === true?
+                    <div>
+                        <Link to='/add'>Add New Character!</Link>
+                    </div>:null
+                }
                 <section>
                     {this.props.characters.map(character => {
                         return(
