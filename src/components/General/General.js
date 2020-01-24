@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../NavBar/NavBar';
 import './General.css';
 import {connect} from 'react-redux';
-import {Link,  Element} from 'react-scroll';
+import {Link} from 'react-scroll';
 import {getTerms} from '../../redux/reducers/generalReducer';
 
 class General extends Component {
@@ -39,8 +39,7 @@ class General extends Component {
                     <div id={this.state.menuStatus}>{this.props.terms.map(term => {
                         return(
                             <div key={term.term_id}>
-                                {/* <Link to={`#${term.term_name}`}>{term.term_name}</Link> */}
-                                <Element
+                                <Link
                                     activeClass="active"
                                     to={term.term_name}
                                     spy={true}
@@ -48,7 +47,7 @@ class General extends Component {
                                     offset={-70}
                                     duration= {500}
                                     >{term.term_name}
-                                </Element>
+                                </Link>
                                 <br/>
                             </div>
                         )
@@ -57,7 +56,7 @@ class General extends Component {
                 <div>
                     <div>{this.props.terms.map(term => {
                         return(
-                            <div key = {term.term_id} className='term_container'>
+                            <div key = {term.term_id} id={term.term_name} className='term_container'>
                                 <h1 className='term_name'>{term.term_name}</h1>
                                 <h2 className='term_info'>{term.term_info}</h2>
                             </div>

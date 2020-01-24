@@ -50,8 +50,7 @@ app.delete('/api/comments/:comment_id', deleteComment);
 //team endpoints
 app.put('/api/team/:user_id', addUserCharacters);
 app.get('/api/team', getTeamImages);
-// app.get('/api/team/mid', getMidImages);
-// app.get('/api/team/anchor', getAnchorImages);
+
 
 
 
