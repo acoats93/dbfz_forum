@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './Characters.css';
 import NavBar from '../NavBar/NavBar';
 import {getAllCharacters, deleteCharacter} from '../../redux/reducers/characterReducer';
-import {getUser} from '../../redux/reducers/userReducer';
+import {getUser,} from '../../redux/reducers/userReducer';
 import {getComments, addComment, editComment, deleteComment} from '../../redux/reducers/commentReducer';
 
 class Characters extends Component {
@@ -12,7 +12,7 @@ class Characters extends Component {
         super()
         this.state = {
             menuStatus: 'menu',
-            comment: '',
+            comment_content: '',
             charIndex: 0
         }
     }
@@ -31,16 +31,26 @@ class Characters extends Component {
     }
 
     commentInput = (e) => {
-        this.setState({comment: e.target.value})
-        console.log(e.target.value)
+        this.setState({comment_content: e.target.value})
     }
 
     commentClick = () => {
-        this.props.addComment(this.state.comment, this.props.user_id)
+        let newComment = {
+            comment_content: this.state.comment_content,
+            user_id: this.props.user_id
+        }
+        this.props.addComment(newComment)
+    }
+
+    commentDelete = () => {
+        this.props.deleteComment(this.props.user_id)
+    }
+
+    commentEdit = () => {
+        this.props.editComment()
     }
 
     render(){
-        console.log(this.props.comments)
         return(
             <div id='whole_page'>
                 <NavBar/>
@@ -51,8 +61,6 @@ class Characters extends Component {
                     id='menu_button'
                     alt='menu_icon'/>
                     <div id={this.state.menuStatus}>{this.props.characters.map((character, index) => {
-                        // let num = index;
-                        // console.log(num)
                         return(
                             <div 
                             key={character.char_id}
@@ -159,12 +167,14 @@ class Characters extends Component {
                             <br/>
                             <section id='comment_section'>
                                 <input placeholder='-comment-' onChange={this.commentInput}></input>
-                                <button onClick={this.commentClick}>Post Comment</button>
-                                <div>
+                                <button onClick={() => this.commentClick(this.state.comment)}>Post Comment</button>
+                                <div id='comment_container'>
                                     {this.props.comments.map(comment => {
                                         return(
                                             <div key={comment.comment_id} id='comment_box'>
-                                                <div>{comment.comment_content}</div>
+                                                <img src='https://image.flaticon.com/icons/png/128/1450/1450571.png' onClick={() => this.props.deleteComment(comment.comment_id)} id='x_button'></img>
+                                                <div>{this.props.username} says:</div>
+                                                <div id='actual_comment'>{comment.comment_content}</div>
                                             </div>    
                                         )
                                     })}
@@ -182,6 +192,7 @@ const mapStateToProps = (reduxState) => {
     return {
         characters: reduxState.characterReducer.characters,
         user_id: reduxState.userReducer.user_id,
+        username: reduxState.userReducer.username,
         is_admin: reduxState.userReducer.is_admin,
         comments: reduxState.commentReducer.comments
     }

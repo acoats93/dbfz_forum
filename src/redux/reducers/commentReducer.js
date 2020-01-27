@@ -19,10 +19,10 @@ export const getComments = () => {
     }
 };
 
-export const addComment = (comment, user_id) => {
+export const addComment = (newComment) => {
     return{
         type: ADD_COMMENT,
-        payload: axios.post('/api/comments', comment, user_id)
+        payload: axios.post('/api/comments', newComment)
     }
 };
 

@@ -60,12 +60,34 @@ class Edit extends Component {
         return
     }
 
+    // checkUploadResult = (error, resultEvent) => {
+    //     if (resultEvent.event === 'success') {
+    //         this.setState({ char_image: resultEvent.info.url })
+    //     }
+    // }
+
     render(){
+        // let widget
+        // if(window.cloudinary){
+        //     widget = window.cloudinary.createUploadWidget(
+        //         {
+        //             cloudName: 'dlnezgd0h',
+        //             uploadPreset: 'dbfz-preset',
+        //             sources: ['local', 'url'],
+        //             default: false
+        //         },
+        //         (error, result) => {
+        //             this.checkUploadResult(error, result)
+        //             this.checkUploadResult(error, result)
+        //         }
+        //         )
+        // }
         return(
             <div>
             <NavBar/>
             <section id='whole_edit_section'>
                 <h1>Editing {this.props.match.params.char_id}</h1>
+                {/* <button onClick={() => widget.open()}>Select an Image</button> */}
                 <input placeholder='Character Name' onChange={this.nameInput}></input>
                 <input placeholder='Character Description' onChange={this.descriptionInput}></input>
                 <input placeholder='Special Moves' onChange={this.spMoveInput}></input>
