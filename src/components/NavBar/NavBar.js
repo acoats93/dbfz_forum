@@ -9,7 +9,7 @@ class NavBar extends Component {
 
     componentDidMount(){
         this.props.getUser();
-        this.props.getAllCharacters();
+        // this.props.getAllCharacters();
         this.props.getTeamImages(this.props.user_id);
     }
 

@@ -2,17 +2,15 @@ module.exports = {
 
     addComment: async (req,res) => {
         const db = req.app.get('db');
-        //i think i actually need to get user_id off of session and i still need to figure out how to get the char_id
-        // const {user_id} = req.session.user.user_id
-        const {user_id, char_id, comment_date, comment_content} = req.body;
-        const newComment = await db.addComment(user_id, char_id, comment_date, comment_content);
+        const {user_id, char_id, comment_content} = req.body;
+        const newComment = await db.addComment(user_id, char_id, comment_content);
         res.status(200).json(newComment);
     },
     editComment: async (req,res) => {
         const db = req.app.get('db');
         const {comment_id} = req.params
         const {user_id, char_id, comment_date, comment_content} = req.body;
-        const updatedComment = await db.editComment(comment_id, user_id, char_id, comment_date, comment_content);
+        const updatedComment = await db.editComment(comment_id, user_id, char_id, comment_content);
         res.status(200).json(updatedComment);
     },
     deleteComment: async (req,res) => {
@@ -20,5 +18,11 @@ module.exports = {
         const {comment_id} = req.params;
         const deletedComment = await db.deleteComment(comment_id);
         res.status(200).json(deletedComment);
+    },
+    getComments: async (req, res) => { 
+        const db = req.app.get('db');
+        const {char_id} = req.body;
+        const comments = await db.getComments(char_id);
+        res.status(200).json(comments);
     }
 }
