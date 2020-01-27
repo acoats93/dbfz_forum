@@ -59,7 +59,6 @@ class Users extends Component {
         return(
             <div>
                 <NavBar/>
-                Users Component
                 <h1 id='greeting_message'>Hello {this.props.username}</h1>
                 <section className='team_building_section'>
                     <section className='category_titles'>Point Character

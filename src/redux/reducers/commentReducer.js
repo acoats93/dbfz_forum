@@ -12,10 +12,10 @@ const EDIT_COMMENT = 'EDIT_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
 
 //functions
-export const getComments = (char_id) => {
+export const getComments = () => {
     return{
         type: GET_COMMENTS,
-        payload: axios.get('/api/comments', char_id)
+        payload: axios.get('/api/comments')
     }
 };
 

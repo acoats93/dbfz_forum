@@ -22,7 +22,7 @@ module.exports = {
     getComments: async (req, res) => { 
         const db = req.app.get('db');
         const {char_id} = req.body;
-        const comments = await db.getComments(char_id);
+        const comments = await db.getComments();
         res.status(200).json(comments);
     }
 }
