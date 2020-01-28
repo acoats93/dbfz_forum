@@ -12,5 +12,14 @@
         font-size: 75px;
         font-weight: bold;
         font-family: 'Saiyan Sans';
+        color: rgb(241, 78, 2);
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
+}
+
+@media (min-width: 770px){
+    #login_section{
+        background-image: url(https://www.wallpaperbetter.com/wallpaper/137/295/579/dragon-ball-z-super-saiyan-minimalism-son-gohan-1080P-wallpaper.jpg);
     }
 }

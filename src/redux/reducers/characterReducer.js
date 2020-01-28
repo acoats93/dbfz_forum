@@ -27,7 +27,8 @@ export const addCharacter = (character) => {
     }
 }
 
-export const editCharacter = (character, char_id) => {
+export const editCharacter = (char_id, character) => {
+    console.log(character)
     return {
         type: EDIT_CHARACTER,
         payload: axios.put(`/admin/edit/${char_id}`, character)

@@ -69,4 +69,10 @@
   -webkit-box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+@media (min-width: 770px) {
+  #whole_homepage {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/499/16/940/dragon-ball-z-son-goku-moonlight-moon-wallpaper-preview.jpg);
+  }
+}
 /*# sourceMappingURL=Home.css.map */

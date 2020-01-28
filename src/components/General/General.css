@@ -40,6 +40,7 @@
   left: 25px;
   position: absolute;
   margin-top: 20px;
+  background-color: #f14e02;
 }
 
 #menu, #menu_open, #menu_closed {
@@ -100,6 +101,24 @@
   }
   100% {
     top: -1000px;
+  }
+}
+
+@media (max-width: 770px) and (min-width: 430px) {
+  .term_name {
+    font-size: 45px;
+  }
+  .term_info {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 770px) {
+  .term_name {
+    font-size: 60px;
+  }
+  .term_info {
+    font-size: 30px;
   }
 }
 /*# sourceMappingURL=General.css.map */

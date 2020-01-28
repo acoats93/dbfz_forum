@@ -1,8 +1,8 @@
 $login_btn_colors: rgb(0, 174, 255);
 
-@mixin nav_image_size(){
-    height: 20px;
-    width: 20px;
+@mixin nav_image_size($val){
+    height: $val;
+    width: $val;
     border: 1px solid darkorange;
 }
 
@@ -43,5 +43,17 @@ $login_btn_colors: rgb(0, 174, 255);
 }
 
 .nav_char_images {
-    @include nav_image_size()
+    @include nav_image_size(20px)
+}
+
+@media (max-width: 770px) and (min-width: 430px){
+    .nav_char_images{
+        @include nav_image_size(40px)
+    }
+}
+
+@media (min-width: 770px){
+    .nav_char_images{
+        @include nav_image_size(60px)
+    }
 }

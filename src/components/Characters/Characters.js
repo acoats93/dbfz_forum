@@ -71,48 +71,14 @@ class Characters extends Component {
                         )
                     })}</div>
                 </div>
-                {/* <h1>{this.props.characters[0].char_name}</h1> */}
                 {this.props.is_admin === true?
                     <div>
                         <Link to='/add'>Add New Character!</Link>
                     </div>:null
                 }
                 <section>
-                    {/* {this.props.characters ? this.props.characters.map(character => {
-                        return(
-                            <div key={character.char_id}>
-                                <section id='name_image_container'>
-                                    <img alt='char_image' id='char_image' src={character.char_image}/>
-                                    <div id='char_name'>{character.char_name}</div>
-                                </section>
-                                <br/>
-                                <section id='paragraph_container'>
-                                    <h1 className='paragraph_titles'>Description</h1>
-                                    <div id='char_description'>{character.char_description}</div>
-                                    <br/>
-                                    <h1 className='paragraph_titles'>Special Move List</h1>
-                                    <div id='char_sp_moves'>{character.char_sp_moves}</div>
-                                    <br/>
-                                    <h1 className='paragraph_titles'>Combos</h1>
-                                    <div id='char_combos'>{character.char_combos}</div>
-                                    <br/>
-                                    <h1 className='paragraph_titles'>Advanced Combos</h1>
-                                    <div id='char_advanced_combos'>{character.char_advanced_combos}</div>
-                                    {this.props.is_admin === true ? 
-                                    <div>
-                                        <button>
-                                            <Link to={`/edit/${character.char_id}`}>Edit</Link>
-                                        </button>
-                                        <button onClick={() => this.props.deleteCharacter(character.char_id)}>Delete</button>
-                                    </div>
-                                    :null
-                                    }
-                                </section>
-                            </div>
-                        )
-                    }):null */}
                     {this.props.user_id?
-                    <div key={this.props.characters[this.state.charIndex]}>
+                    <div id='logged_in_display' key={this.props.characters[this.state.charIndex]}>
                             <section id='name_image_container'>
                                 <img alt='char_image' id='char_image' src={this.props.characters[this.state.charIndex].char_image}/>
                                 <div id='char_name'>{this.props.characters[this.state.charIndex].char_name}</div>
@@ -120,16 +86,17 @@ class Characters extends Component {
                             <br/>
                             <section id='paragraph_container'>
                                 <h1 className='paragraph_titles'>Description</h1>
-                                <div id='char_description'>{this.props.characters[this.state.charIndex].char_description}</div>
+                                <div className='paragraph_text' id='char_description'>{this.props.characters[this.state.charIndex].char_description}</div>
                                 <br/>
                                 <h1 className='paragraph_titles'>Special Move List</h1>
-                                <div id='char_sp_moves'>{this.props.characters[this.state.charIndex].char_sp_moves}</div>
+                                <div className='paragraph_text' id='char_sp_moves'>{this.props.characters[this.state.charIndex].char_sp_moves}</div>
                                 <br/>
                                 <h1 className='paragraph_titles'>Combos</h1>
-                                <div id='char_combos'>{this.props.characters[this.state.charIndex].char_combos}</div>
+                                <div className='paragraph_text' id='char_combos'>{this.props.characters[this.state.charIndex].char_combos}</div>
                                 <br/>
                                 <h1 className='paragraph_titles'>Advanced Combos</h1>
-                                <div id='char_advanced_combos'>{this.props.characters[this.state.charIndex].char_advanced_combos}</div>
+                                <div className='paragraph_text' id='char_advanced_combos'>{this.props.characters[this.state.charIndex].char_advanced_combos}</div>
+                                <br/>
                                 {this.props.is_admin === true ? 
                                     <div>
                                         <button>
@@ -137,30 +104,7 @@ class Characters extends Component {
                                         </button>
                                         <button onClick={() => this.props.deleteCharacter(this.props.characters[this.state.charIndex].char_id)}>Delete</button>
                                     </div>
-                                :this.props.characters.map(character => {
-                                    return(
-                                        <div key={character.char_id}>
-                                          <section id='name_image_container'>
-                                            <img alt='char_image' id='char_image' src={character.char_image}/>
-                                            <div id='char_name'>{character.char_name}</div>
-                                          </section>
-                                          <br/>
-                                          <section id='paragraph_container'>
-                                            <h1 className='paragraph_titles'>Description</h1>
-                                            <div id='char_description'>{character.char_description}</div>
-                                            <br/>
-                                            <h1 className='paragraph_titles'>Special Move List</h1>
-                                            <div id='char_sp_moves'>{character.char_sp_moves}</div>
-                                            <br/>
-                                            <h1 className='paragraph_titles'>Combos</h1>
-                                            <div id='char_combos'>{character.char_combos}</div>
-                                            <br/>
-                                            <h1 className='paragraph_titles'>Advanced Combos</h1>
-                                            <div id='char_advanced_combos'>{character.char_advanced_combos}</div>
-                                          </section>
-                                        </div>
-                                    )
-                                  })
+                                :null
                                 }
                             </section>
                             <br/>
@@ -180,7 +124,32 @@ class Characters extends Component {
                                     })}
                                 </div>
                             </section>
-                    </div>: null }
+                                    
+                                
+                    </div>: this.props.characters.map(character => {
+                                        return(
+                                            <div id='logged_out_display' key={character.char_id}>
+                                              <section id='name_image_container'>
+                                                <img alt='char_image' id='char_image' src={character.char_image}/>
+                                                <div id='char_name'>{character.char_name}</div>
+                                              </section>
+                                              <br/>
+                                              <section id='paragraph_container'>
+                                                <h1 className='paragraph_titles'>Description</h1>
+                                                <div className='paragraph_text' id='char_description'>{character.char_description}</div>
+                                                <br/>
+                                                <h1 className='paragraph_titles'>Special Move List</h1>
+                                                <div className='paragraph_text' id='char_sp_moves'>{character.char_sp_moves}</div>
+                                                <br/>
+                                                <h1 className='paragraph_titles'>Combos</h1>
+                                                <div className='paragraph_text' id='char_combos'>{character.char_combos}</div>
+                                                <br/>
+                                                <h1 className='paragraph_titles'>Advanced Combos</h1>
+                                                <div className='paragraph_text' id='char_advanced_combos'>{character.char_advanced_combos}</div>
+                                              </section>
+                                            </div>
+                                        )
+                                      }) }
                 </section>
 
             </div>

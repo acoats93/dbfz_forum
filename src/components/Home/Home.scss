@@ -57,3 +57,9 @@
 #characters_link{
     @extend %link_stuff;    
 }
+
+@media (min-width: 770px){
+    #whole_homepage{
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/499/16/940/dragon-ball-z-son-goku-moonlight-moon-wallpaper-preview.jpg);
+    }
+}

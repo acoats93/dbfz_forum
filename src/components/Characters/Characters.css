@@ -1,75 +1,230 @@
-#whole_page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f14e02;
+@media (max-width: 425px) {
+  #whole_page {
+    width: 100vw;
+    height: 100%;
+    background-color: #f14e02;
+  }
+  #name_image_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #char_name {
+    font-size: 50px;
+    font-family: 'Saiyan Sans';
+  }
+  #char_image {
+    height: 140px;
+    width: 140px;
+    border: 2px solid black;
+  }
+  #paragraph_container {
+    background-color: #f14e02;
+  }
+  .paragraph_titles {
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Saiyan Sans';
+  }
+  #comment_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #comment_box {
+    border: 1px solid black;
+    background-color: darkgray;
+    width: 90vw;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #actual_comment {
+    border: 1px solid black;
+    background-color: white;
+    width: 80%;
+    margin-left: 30px;
+  }
+  #x_button {
+    height: 20px;
+    width: 20px;
+    position: right 25px;
+  }
 }
 
-#name_image_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bold;
-  text-decoration: underline;
+@media (max-width: 770px) and (min-width: 425px) {
+  #whole_page {
+    width: 100vw;
+    height: 100%;
+    background-color: #f14e02;
+  }
+  #name_image_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #char_name {
+    font-size: 80px;
+    font-family: 'Saiyan Sans';
+  }
+  #char_image {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+  }
+  .paragraph_titles {
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Saiyan Sans';
+    font-size: 50px;
+  }
+  .paragraph_text {
+    font-size: 20px;
+  }
+  #comment_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #comment_box {
+    border: 1px solid black;
+    background-color: darkgray;
+    width: 90vw;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #actual_comment {
+    border: 1px solid black;
+    background-color: white;
+    width: 80%;
+    margin-left: 30px;
+  }
+  #x_button {
+    height: 20px;
+    width: 20px;
+    position: right 25px;
+  }
 }
 
-#char_name {
-  font-size: 50px;
-  font-family: 'Saiyan Sans';
-}
-
-#char_image {
-  height: 140px;
-  width: 140px;
-}
-
-.paragraph_titles {
-  text-decoration: underline;
-  font-weight: bold;
-  font-family: 'Saiyan Sans';
-}
-
-#comment_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#comment_box {
-  border: 1px solid black;
-  background-color: darkgray;
-  width: 90vw;
-  height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#actual_comment {
-  border: 1px solid black;
-  background-color: white;
-  width: 80%;
-  margin-left: 30px;
-}
-
-#x_button {
-  height: 20px;
-  width: 20px;
-  position: right 25px;
+@media (min-width: 770px) {
+  #whole_page {
+    width: 100vw;
+    height: 100%;
+    background-color: #f14e02;
+  }
+  #name_image_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #char_name {
+    font-size: 80px;
+    font-family: 'Saiyan Sans';
+  }
+  #char_image {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+  }
+  .paragraph_titles {
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Saiyan Sans';
+    font-size: 50px;
+  }
+  .paragraph_text {
+    font-size: 20px;
+  }
+  #comment_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #comment_box {
+    border: 1px solid black;
+    background-color: darkgray;
+    width: 90vw;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #actual_comment {
+    border: 1px solid black;
+    background-color: white;
+    width: 80%;
+    margin-left: 30px;
+  }
+  #x_button {
+    height: 20px;
+    width: 20px;
+    position: right 25px;
+  }
 }
 /*# sourceMappingURL=Characters.css.map */

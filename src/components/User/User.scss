@@ -1,10 +1,35 @@
 $font: 'Saiyan Sans';
+$backgroundColor: rgb(241, 78, 2);
 
+#whole_user_page{
+    background-image: url(https://pm1.narvii.com/6843/a29f3d75e8ea3cc0e77090857b5195084fecc10fv2_hq.jpg);
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 #greeting_message{
     font-family: $font;
+    font-size: 60px;
+    color: $backgroundColor;
+    font: outline black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }   
 
 .category_titles{
     font-family: $font;
+    font-size: 25px;
+    color: $backgroundColor;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+@media (min-width: 770px){
+    #whole_user_page{
+        background-image: url(https://images7.alphacoders.com/317/thumb-1920-317485.png);
+    }
 }
