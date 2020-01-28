@@ -7,7 +7,7 @@ const session = require('express-session');
 const {getAllCharacters} = require('./controllers/characterController');
 const {login, logout, getUser, register, addUserCharacters, getTeamImages} = require('./controllers/userController');
 const {addCharacter, editCharacter, deleteCharacter} = require('./controllers/adminController');
-const {addComment, editComment, deleteComment, getComments} = require('./controllers/commentController');
+const {addComment, editComment, deleteComment, getComments, getUserComment, getCharacterComment} = require('./controllers/commentController');
 const {getAllTerms} = require('./controllers/generalController');
 
 
@@ -48,6 +48,7 @@ app.get('/api/comments', getComments);
 app.post('/api/comments', addComment);
 app.put('/api/comments/:comment_id', editComment);
 app.delete('/api/comments/:comment_id', deleteComment);
+app.get('/api/comments/username', getUserComment);
 //team endpoints
 app.put('/api/team/:user_id', addUserCharacters);
 app.get('/api/team', getTeamImages);

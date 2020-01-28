@@ -5,7 +5,7 @@ import './Characters.css';
 import NavBar from '../NavBar/NavBar';
 import {getAllCharacters, deleteCharacter} from '../../redux/reducers/characterReducer';
 import {getUser,} from '../../redux/reducers/userReducer';
-import {getComments, addComment, editComment, deleteComment} from '../../redux/reducers/commentReducer';
+import {getComments, addComment, editComment, deleteComment, getUserComment} from '../../redux/reducers/commentReducer';
 
 class Characters extends Component {
     constructor(){
@@ -20,6 +20,8 @@ class Characters extends Component {
         this.props.getAllCharacters();
         this.props.getUser();
         this.props.getComments();
+        this.props.getUserComment();
+        console.log(this.props.username)
     }
 
     menuClick = () => {
@@ -37,7 +39,8 @@ class Characters extends Component {
     commentClick = () => {
         let newComment = {
             comment_content: this.state.comment_content,
-            user_id: this.props.user_id
+            user_id: this.props.user_id,
+            //need to send in char_id & then sort by char_id 
         }
         this.props.addComment(newComment)
     }
@@ -161,9 +164,10 @@ const mapStateToProps = (reduxState) => {
     return {
         characters: reduxState.characterReducer.characters,
         user_id: reduxState.userReducer.user_id,
-        username: reduxState.userReducer.username,
+        // username: reduxState.userReducer.username,
         is_admin: reduxState.userReducer.is_admin,
-        comments: reduxState.commentReducer.comments
+        comments: reduxState.commentReducer.comments,
+        username: reduxState.commentReducer.userComment
     }
 }
 
@@ -174,5 +178,6 @@ export default connect(mapStateToProps, {
     getComments,
     addComment,
     editComment,
-    deleteComment
+    deleteComment,
+    getUserComment
 })(Characters);

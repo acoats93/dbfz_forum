@@ -2,7 +2,8 @@ import axios from 'axios'
 
 //initial state
 const initialState = {
-    comments: []
+    comments: [],
+    username: ''
 }
 
 //constants
@@ -10,6 +11,7 @@ const GET_COMMENTS = 'GET_COMMENTS';
 const ADD_COMMENT = 'ADD_COMMENT';
 const EDIT_COMMENT = 'EDIT_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
+const GET_USER_COMMENT = 'GET_USER_COMMENT';
 
 //functions
 export const getComments = () => {
@@ -38,6 +40,13 @@ export const deleteComment = (comment_id) => {
         type: DELETE_COMMENT,
         payload: axios.delete(`api/comments/${comment_id}`)
     }
+};
+
+export const getUserComment = (comment_id) => {
+    return {
+        type: GET_USER_COMMENT,
+        payload: axios.get('api/comments/username', comment_id)
+    }
 }
 
 //reducer
@@ -63,6 +72,11 @@ export default function reducer(state=initialState,action){
             return{
                 ...state,
                 comments: payload.data
+            }
+        case `${GET_USER_COMMENT}_FULFILLED`:
+            return{
+                ...state,
+                username: payload.data
             }
         default: return state
     }
