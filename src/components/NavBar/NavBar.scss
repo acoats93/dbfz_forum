@@ -1,4 +1,7 @@
 $login_btn_colors: rgb(0, 174, 255);
+%link_stuff{
+    font-size: 50px;
+}
 
 @mixin nav_image_size($val){
     height: $val;
@@ -55,5 +58,17 @@ $login_btn_colors: rgb(0, 174, 255);
 @media (min-width: 770px){
     .nav_char_images{
         @include nav_image_size(60px)
+    }
+
+    #home{
+        font-size: 30px;
+    }
+
+    #general{
+        @extend #home
+    }
+
+    #characters{
+        @extend #home
     }
 }

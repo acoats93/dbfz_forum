@@ -20,7 +20,7 @@ class Characters extends Component {
         this.props.getAllCharacters();
         this.props.getUser();
         this.props.getComments();
-        this.props.getUserComment();
+        // this.props.getUserComment();
         console.log(this.props.username)
     }
 
@@ -40,9 +40,12 @@ class Characters extends Component {
         let newComment = {
             comment_content: this.state.comment_content,
             user_id: this.props.user_id,
+            username: this.props.username
             //need to send in char_id & then sort by char_id 
         }
+        console.log(newComment)
         this.props.addComment(newComment)
+        this.setState({comment_content: ''})
     }
 
     commentDelete = () => {
@@ -120,7 +123,7 @@ class Characters extends Component {
                                         return(
                                             <div key={comment.comment_id} id='comment_box'>
                                                 <img src='https://image.flaticon.com/icons/png/128/1450/1450571.png' onClick={() => this.props.deleteComment(comment.comment_id)} id='x_button'></img>
-                                                <div>{this.props.username} says:</div>
+                                                <div> {comment.username} says:</div>
                                                 <div id='actual_comment'>{comment.comment_content}</div>
                                             </div>    
                                         )
@@ -164,10 +167,10 @@ const mapStateToProps = (reduxState) => {
     return {
         characters: reduxState.characterReducer.characters,
         user_id: reduxState.userReducer.user_id,
-        // username: reduxState.userReducer.username,
+        username: reduxState.userReducer.username,
         is_admin: reduxState.userReducer.is_admin,
         comments: reduxState.commentReducer.comments,
-        username: reduxState.commentReducer.userComment
+        // username: reduxState.commentReducer.username
     }
 }
 
@@ -179,5 +182,5 @@ export default connect(mapStateToProps, {
     addComment,
     editComment,
     deleteComment,
-    getUserComment
+    // getUserComment
 })(Characters);

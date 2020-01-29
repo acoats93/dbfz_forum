@@ -24,13 +24,13 @@ class NavBar extends Component {
                     <h1>Korin Tower</h1>
                     <div>
                         <h2>
-                            <Link to='/'>Home</Link>
+                            <Link id='home' to='/'>Home</Link>
                         </h2>
                         <h2>
-                            <Link to='/general'>General</Link>
+                            <Link id='general' to='/general'>General</Link>
                         </h2>
                         <h2>
-                            <Link to='/characters'>Characters</Link>
+                            <Link id='characters' to='/characters'>Characters</Link>
                         </h2>
                     </div>
                 </section>
